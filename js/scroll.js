@@ -27,6 +27,20 @@ window.addEventListener('load', function () {
 
   if (reduce || isTouch || !hasGSAP) {
     document.body.classList.add('no-anim');
+    // Phones (not reduced-motion): keep the page lively with cheap, one-shot
+    // fade-in reveals via IntersectionObserver — opacity/transform only, and
+    // NOT tied to scroll position, so there is no per-frame jank.
+    if (isTouch && !reduce && 'IntersectionObserver' in window) {
+      document.body.classList.add('has-io');
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('in-view'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+      document.querySelectorAll('[data-anim], .reveal-text, .h-reveal').forEach(function (el) {
+        io.observe(el);
+      });
+    }
     return;
   }
 

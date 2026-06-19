@@ -264,6 +264,20 @@ body.no-anim .hgallery-inner { height: auto; overflow-x: auto; }
 @media (max-width: 767px) {
   .xhero-bg, .subhero-bg, .par-img, .hpanel-img, .marquee-track { will-change: auto; }
   .par-wrap, .hpanel, .menu-card, .split .split-content { box-shadow: none; }
+
+  /* Light one-shot reveals on phones (gated by body.has-io so content is
+     never hidden if JS/IntersectionObserver is unavailable) */
+  body.has-io [data-anim],
+  body.has-io .reveal-text,
+  body.has-io .h-reveal {
+    opacity: 0; transform: translateY(22px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
+  body.has-io [data-anim].in-view,
+  body.has-io .reveal-text.in-view,
+  body.has-io .h-reveal.in-view {
+    opacity: 1; transform: none;
+  }
 }
 @media (max-width: 600px) {
   .chapter { padding: 100px 20px 70px; }
