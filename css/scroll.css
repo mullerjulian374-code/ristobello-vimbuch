@@ -250,15 +250,13 @@ body.no-anim .hgallery-inner { height: auto; overflow-x: auto; }
   .split .split-img { min-height: 320px; }
 }
 /* Phone: horizontal gallery becomes a native swipe carousel (pin disabled in JS) */
+/* Phone: gallery becomes a plain vertical list — no nested horizontal
+   scroller / scroll-snap (a major source of iOS scroll jank). */
 @media (max-width: 767px) {
-  .hgallery-inner {
-    height: auto; overflow-x: auto; overflow-y: hidden;
-    -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory;
-    padding: 26px 0;
-  }
-  .hgallery-track { padding: 0 18px; gap: 16px; }
-  .hpanel { width: 78vw; height: 52vh; scroll-snap-align: center; }
-  .hpanel--text, .hpanel--cta { width: 80vw; height: auto; padding: 30px 24px; scroll-snap-align: center; }
+  .hgallery-inner { height: auto; overflow: visible; padding: 6px 0; }
+  .hgallery-track { flex-direction: column; gap: 14px; padding: 0 18px; }
+  .hpanel { width: auto; height: 56vw; }
+  .hpanel--text, .hpanel--cta { width: auto; height: auto; padding: 28px 22px; }
   .hpanel-img { transform: none; }
   .hpanel-label, .h-reveal { opacity: 1; visibility: visible; }
 }
