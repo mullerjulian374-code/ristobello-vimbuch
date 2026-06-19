@@ -305,14 +305,23 @@ a { color: inherit; text-decoration: none; }
   .gallery-grid { grid-template-columns: 1fr 1fr; }
   .section { padding: 56px 22px; }
 }
-/* Phone performance: drop expensive blur / blend-mode compositing */
+/* Phone performance: drop expensive blur / blend-mode / shadow compositing */
 @media (max-width: 767px) {
   .site-nav {
     background: rgba(30, 15, 11, 0.97);
     backdrop-filter: none; -webkit-backdrop-filter: none;
   }
   .nav-links { backdrop-filter: none; -webkit-backdrop-filter: none; }
+  /* solid background instead of a fixed gradient + blended image */
+  .page-bg { background: #1c100d; }
   .page-bg::before { display: none; }
+  /* heavy soft shadows are expensive to repaint while scrolling */
+  .menu-card, .panel, .split-img, .contact-map, .hero-image, .call-fab { box-shadow: none; }
+  /* skip rendering of long off-screen sections until they are scrolled near */
+  .section, .xcontact, .gallery-grid {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 800px;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }

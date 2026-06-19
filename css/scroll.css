@@ -262,6 +262,15 @@ body.no-anim .hgallery-inner { height: auto; overflow-x: auto; }
   .hpanel-img { transform: none; }
   .hpanel-label, .h-reveal { opacity: 1; visibility: visible; }
 }
+/* Phone performance: free GPU layers, drop shadows, skip off-screen sections */
+@media (max-width: 767px) {
+  .xhero-bg, .subhero-bg, .par-img, .hpanel-img, .marquee-track { will-change: auto; }
+  .par-wrap, .hpanel, .menu-card, .split .split-content { box-shadow: none; }
+  .chapter:not(.chapter--hero), .hgallery, .marquee {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 90vh;
+  }
+}
 @media (max-width: 600px) {
   .chapter { padding: 100px 20px 70px; }
   .xhero-logo { width: 88vw; }
