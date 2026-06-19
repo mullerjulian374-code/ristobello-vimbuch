@@ -312,16 +312,10 @@ a { color: inherit; text-decoration: none; }
     backdrop-filter: none; -webkit-backdrop-filter: none;
   }
   .nav-links { backdrop-filter: none; -webkit-backdrop-filter: none; }
-  /* solid background instead of a fixed gradient + blended image */
-  .page-bg { background: #1c100d; }
-  .page-bg::before { display: none; }
+  /* drop the fixed full-screen gradient layer (body already has a dark bg) */
+  .page-bg { display: none; }
   /* heavy soft shadows are expensive to repaint while scrolling */
   .menu-card, .panel, .split-img, .contact-map, .hero-image, .call-fab { box-shadow: none; }
-  /* skip rendering of long off-screen sections until they are scrolled near */
-  .section, .xcontact, .gallery-grid {
-    content-visibility: auto;
-    contain-intrinsic-size: auto 800px;
-  }
 }
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }

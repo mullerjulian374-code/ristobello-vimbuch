@@ -7,9 +7,12 @@
 
 window.addEventListener('load', function () {
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  // Phones: skip the heavy scroll-linked engine (Lenis + scrubbed ScrollTriggers
-  // + parallax) entirely and fall back to a light, native-scroll layout.
-  var isPhone = window.matchMedia('(max-width: 767px)').matches;
+  // Touch devices (phones/tablets, any orientation): skip the heavy scroll-linked
+  // engine — Lenis smooth-scroll, scrubbed ScrollTriggers, parallax — and use
+  // plain native scrolling. Lenis' eased momentum is the main cause of the
+  // "keeps gliding / can't keep up" jank on touch.
+  var isTouch = window.matchMedia('(max-width: 767px)').matches
+    || window.matchMedia('(hover: none) and (pointer: coarse)').matches;
   var hasGSAP = typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined';
 
   // Scroll progress bar
@@ -22,7 +25,7 @@ window.addEventListener('load', function () {
   window.addEventListener('scroll', updateBar, { passive: true });
   updateBar();
 
-  if (reduce || isPhone || !hasGSAP) {
+  if (reduce || isTouch || !hasGSAP) {
     document.body.classList.add('no-anim');
     return;
   }
