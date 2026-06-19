@@ -7,6 +7,9 @@
 
 window.addEventListener('load', function () {
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Phones: skip the heavy scroll-linked engine (Lenis + scrubbed ScrollTriggers
+  // + parallax) entirely and fall back to a light, native-scroll layout.
+  var isPhone = window.matchMedia('(max-width: 767px)').matches;
   var hasGSAP = typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined';
 
   // Scroll progress bar
@@ -19,7 +22,7 @@ window.addEventListener('load', function () {
   window.addEventListener('scroll', updateBar, { passive: true });
   updateBar();
 
-  if (reduce || !hasGSAP) {
+  if (reduce || isPhone || !hasGSAP) {
     document.body.classList.add('no-anim');
     return;
   }

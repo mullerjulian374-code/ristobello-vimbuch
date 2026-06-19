@@ -305,6 +305,15 @@ a { color: inherit; text-decoration: none; }
   .gallery-grid { grid-template-columns: 1fr 1fr; }
   .section { padding: 56px 22px; }
 }
+/* Phone performance: drop expensive blur / blend-mode compositing */
+@media (max-width: 767px) {
+  .site-nav {
+    background: rgba(30, 15, 11, 0.97);
+    backdrop-filter: none; -webkit-backdrop-filter: none;
+  }
+  .nav-links { backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .page-bg::before { display: none; }
+}
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
   .reveal { opacity: 1; transform: none; }
