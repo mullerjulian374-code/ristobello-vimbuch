@@ -138,7 +138,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--c-cream); cursor: pointer; transition: all 0.3s ease; text-align: center;
 }
 .btn:hover { background: var(--c-wine-deep); border-color: var(--c-gold); color: var(--c-gold-soft); transform: translateY(-1px); }
-.btn-gold { background: transparent; border-color: var(--c-gold); color: var(--c-gold-soft); }
+.btn-gold { background: transparent; border-color: var(--c-gold); color: var(--c-ink); }
 .btn-gold:hover { background: var(--c-gold); color: var(--c-ink); border-color: var(--c-gold); }
 .btn-ghost { background: transparent; border-color: rgba(248,239,230,0.5); color: var(--c-cream); }
 .btn-ghost:hover { background: var(--c-cream); color: var(--c-ink); border-color: var(--c-cream); }

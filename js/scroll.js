@@ -34,7 +34,13 @@ window.addEventListener('load', function () {
       document.body.classList.add('has-io');
       var io = new IntersectionObserver(function (entries) {
         entries.forEach(function (e) {
-          if (e.isIntersecting) { e.target.classList.add('in-view'); io.unobserve(e.target); }
+          if (e.isIntersecting) {
+            // honour the choreography: stagger via the same data-delay used on desktop
+            var d = parseFloat(e.target.dataset.delay);
+            if (d) e.target.style.transitionDelay = d + 's';
+            e.target.classList.add('in-view');
+            io.unobserve(e.target);
+          }
         });
       }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
       document.querySelectorAll('[data-anim], .reveal-text, .h-reveal').forEach(function (el) {
