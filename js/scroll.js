@@ -72,14 +72,6 @@ window.addEventListener('load', function () {
     });
   });
 
-  // ---- Hero background parallax (scrubbed, homepage only) ----
-  if (document.querySelector('.chapter--hero')) {
-    gsap.fromTo('.xhero-bg', { yPercent: -6, scale: 1.05 }, {
-      yPercent: 18, scale: 1.22, ease: 'none',
-      scrollTrigger: { trigger: '.chapter--hero', start: 'top top', end: 'bottom top', scrub: true }
-    });
-  }
-
   // ---- Directional build-up presets: [from, to] ----
   var ANIM = {
     up:    [{ y: 90,  autoAlpha: 0 }, { y: 0, autoAlpha: 1 }],

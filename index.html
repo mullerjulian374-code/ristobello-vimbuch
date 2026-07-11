@@ -4,12 +4,12 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Ristobello im Clubhaus Vimbuch — Authentische italienische Küche</title>
-<meta name="description" content="Ristobello im Clubhaus SV Vimbuch — hausgemachte Pizza, frische Pasta und mediterranes Ambiente in Bühl-Vimbuch. Täglich frisch zubereitet." />
+<meta name="description" content="Ristobello im Clubhaus SV Vimbuch — frisch zubereitete Pizza, Pasta und mediterranes Ambiente in Bühl-Vimbuch. Täglich frisch zubereitet." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+SC:wght@400;500;600&family=Pinyon+Script&family=Cinzel:wght@400;500&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/styles.css?v=17" />
-<link rel="stylesheet" href="css/scroll.css?v=17" />
+<link rel="stylesheet" href="css/styles.css?v=22" />
+<link rel="stylesheet" href="css/scroll.css?v=22" />
 </head>
 <body>
 <div class="page-bg"></div>
@@ -37,13 +37,16 @@
 
   <!-- HERO -->
   <section class="chapter chapter--hero" id="home">
-    <div class="xhero-bg" style="background-image:url('img/terrasse-2.jpg');"></div>
+    <div class="xhero-bg"></div>
     <div class="xhero-veil"></div>
     <div class="xhero-inner">
       <div class="xhero-eyebrow">Benvenuti · Pizzeria · Vimbuch</div>
-      <img src="img/logo.png" alt="Ristobello im Clubhaus Vimbuch" class="xhero-logo" />
+      <div class="xhero-logo-wrap">
+        <img src="img/logo.png" alt="Ristobello im Clubhaus Vimbuch" class="xhero-logo" />
+      </div>
+      <span class="xhero-line"></span>
       <div class="xhero-script">Herzlich Willkommen</div>
-      <p class="xhero-tagline">Authentische italienische Küche im Clubhaus SV Vimbuch — hausgemacht und täglich frisch zubereitet.</p>
+      <p class="xhero-tagline">Authentische italienische Küche im Clubhaus SV Vimbuch — täglich frisch zubereitet.</p>
       <div class="xhero-ctas">
         <a href="#menu" data-scroll class="btn">Zur Speisekarte</a>
         <a href="#kontakt" data-scroll class="btn btn-ghost">Tisch reservieren</a>
@@ -57,6 +60,24 @@
       <div class="ch-split">
         <div class="par-wrap" data-anim="left">
           <div class="par-img" data-speed="-12" style="background-image:url('img/gastraum.jpg');"></div>
+          <svg class="chef-sticker" style="top:16px;right:16px;" viewBox="0 0 200 200" role="img" aria-label="Hier kocht der Chef – Benvenuti in Ristobello">
+            <defs>
+              <path id="cs-top" d="M28,100 A72,72 0 0 1 172,100"/>
+              <path id="cs-bot" d="M32,100 A68,68 0 0 0 168,100"/>
+            </defs>
+            <circle cx="100" cy="100" r="95" fill="#1b0c09"/>
+            <circle cx="100" cy="100" r="94" fill="none" stroke="#c9a961" stroke-width="2.5"/>
+            <circle cx="100" cy="100" r="86" fill="none" stroke="#c9a961" stroke-width="1" opacity="0.5"/>
+            <text font-family="'Cinzel', serif" font-weight="500" font-size="13.5" letter-spacing="3" fill="#ece0cc" text-anchor="middle"><textPath href="#cs-top" startOffset="50%">HIER KOCHT DER CHEF</textPath></text>
+            <text font-family="'Cinzel', serif" font-size="11.5" letter-spacing="1.5" fill="#ece0cc" text-anchor="middle"><textPath href="#cs-bot" startOffset="50%">BENVENUTI IN RISTOBELLO</textPath></text>
+            <g fill="#c9a961"><path d="M14,95 L18,100 L14,105 L10,100 Z"/><path d="M186,95 L190,100 L186,105 L182,100 Z"/></g>
+            <g fill="none" stroke="#ece0cc" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+              <path d="M80,106 C66,106 62,90 73,84 C67,73 80,66 89,73 C94,64 106,64 111,73 C120,66 133,73 127,84 C138,90 134,106 120,106 Z"/>
+              <path d="M82,106 L118,106 L116,118 L84,118 Z"/>
+              <line x1="92" y1="106" x2="92" y2="117"/><line x1="100" y1="106" x2="100" y2="117"/><line x1="108" y1="106" x2="108" y2="117"/>
+            </g>
+            <text x="100" y="134" font-family="'Cinzel', serif" font-size="9" letter-spacing="3" fill="#c9a961" text-anchor="middle">VIMBUCH</text>
+          </svg>
         </div>
         <div>
           <div class="ch-eyebrow" data-anim="down">— La nostra storia —</div>
@@ -65,11 +86,11 @@
           <p class="ch-text" data-anim="up">
             Im Clubhaus des SV Vimbuch hat das Ristobello ein Zuhause gefunden —
             ein Ort für Familien, Freunde und Nachbarn, mitten im Schwarzwald.
-            Gastgeber Giuseppe Grillo bringt ein Stück Bella Italia ins Herz
+            Gastgeber Pino bringt ein Stück Bella Italia ins Herz
             von Bühl-Vimbuch.
           </p>
           <p class="ch-text" data-anim="up" data-delay="0.1">
-            Knusprige Pizza, Pasta und feine Gerichte: alles hausgemacht, mit
+            Knusprige Pizza, Pasta und feine Gerichte: alles frisch zubereitet, mit
             Liebe und erlesenen Zutaten. Bei uns sind Sie nicht Gast —
             Sie sind Famiglia.
           </p>
@@ -164,9 +185,9 @@
         <ul class="hours" style="color:var(--c-ink);">
           <li><span style="color:var(--c-ink);">Montag</span><span style="color:var(--c-wine);">Ruhetag</span></li>
           <li><span style="color:var(--c-ink);">Dienstag – Samstag</span><span style="color:var(--c-ink-soft);">17:30 – 22:00</span></li>
-          <li><span style="color:var(--c-ink);">Sonntag</span><span style="color:var(--c-ink-soft);">11:30 – 21:00</span></li>
+          <li><span style="color:var(--c-ink);">Sonntag</span><span style="color:var(--c-ink-soft);">17:00 – 21:00</span></li>
         </ul>
-        <p class="contact-hint" style="color:var(--c-wine);">Sonntags ab 14:00 Uhr Kaffee &amp; Kuchen</p>
+        <p class="contact-hint" style="color:var(--c-wine);">Bei Fußballspielen des SV Vimbuch bewirten wir Sie ebenfalls.</p>
       </div>
       <a href="tel:+4972238008234" class="btn" style="margin-top:8px;">Jetzt anrufen &amp; reservieren</a>
     </div>
@@ -207,8 +228,9 @@
         <li><span>Do</span><span>17:30–22:00</span></li>
         <li><span>Fr</span><span>17:30–22:00</span></li>
         <li><span>Sa</span><span>17:30–22:00</span></li>
-        <li><span>So</span><span>11:30–21:00</span></li>
+        <li><span>So</span><span>17:00–21:00</span></li>
       </ul>
+      <p class="footer-hours-note">Bei Fußballspielen des SV Vimbuch bewirten wir Sie ebenfalls.</p>
     </div>
     <div class="footer-col">
       <h4>Kontakt</h4>
@@ -216,6 +238,7 @@
         <li>Am Sportplatz 1</li>
         <li>77815 Bühl-Vimbuch</li>
         <li><a href="tel:+4972238008234">+49 7223 8008234</a></li>
+        <li><a href="https://www.instagram.com/ristobello2025" target="_blank" rel="noopener">Instagram</a></li>
         <li><a href="kontakt.html#impressum">Impressum</a></li>
       </ul>
     </div>
@@ -235,7 +258,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
-<script src="js/main.js?v=17"></script>
-<script src="js/scroll.js?v=17"></script>
+<script src="js/main.js?v=22"></script>
+<script src="js/scroll.js?v=22"></script>
 </body>
 </html>
