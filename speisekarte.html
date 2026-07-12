@@ -4,14 +4,14 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Speisekarte — Ristobello im Clubhaus Vimbuch</title>
-<meta name="description" content="Die Speisekarte des Ristobello Vimbuch: Antipasti, frisch zubereitete Pizza & Pasta, Fleisch- und Fischgerichte sowie italienische Dolci." />
+<meta name="description" content="Die Speisekarte des Ristobello Vimbuch: frisch zubereitete Pizza (Ø 32 cm), Pasta, Salate und Ristobello-Spezialitäten im Herzen des Schwarzwalds." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+SC:wght@400;500;600&family=Pinyon+Script&family=Cinzel:wght@400;500&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/styles.css?v=22" />
-<link rel="stylesheet" href="css/scroll.css?v=22" />
+<link rel="stylesheet" href="css/styles.css?v=27" />
+<link rel="stylesheet" href="css/scroll.css?v=27" />
 </head>
-<body>
+<body class="menu-page">
 <div class="page-bg"></div>
 
 <nav class="site-nav">
@@ -64,97 +64,206 @@
 <section class="section" style="padding-top:64px;">
   <div class="menu-wrap">
 
-    <!-- ANTIPASTI -->
-    <div class="menu-card reveal" id="antipasti">
-      <h3 class="menu-cat">Antipasti</h3>
-      <div class="menu-cat-script">Vorspeisen</div>
+    <!-- Wiederverwendbarer Chef-Sticker (einmal definiert) -->
+    <svg class="chef-seal-defs" aria-hidden="true"><defs>
+      <path id="cs-topM" d="M28,100 A72,72 0 0 1 172,100"/>
+      <path id="cs-botM" d="M32,100 A68,68 0 0 0 168,100"/>
+      <g id="chefSealG">
+        <circle cx="100" cy="100" r="95" fill="#1b0c09"/>
+        <circle cx="100" cy="100" r="94" fill="none" stroke="#c9a961" stroke-width="2.5"/>
+        <circle cx="100" cy="100" r="86" fill="none" stroke="#c9a961" stroke-width="1" opacity="0.5"/>
+        <text font-family="'Cinzel', serif" font-weight="500" font-size="13.5" letter-spacing="3" fill="#ece0cc" text-anchor="middle"><textPath href="#cs-topM" startOffset="50%">HIER KOCHT DER CHEF</textPath></text>
+        <text font-family="'Cinzel', serif" font-size="11.5" letter-spacing="1.5" fill="#ece0cc" text-anchor="middle"><textPath href="#cs-botM" startOffset="50%">BENVENUTI IN RISTOBELLO</textPath></text>
+        <g fill="#c9a961"><path d="M14,95 L18,100 L14,105 L10,100 Z"/><path d="M186,95 L190,100 L186,105 L182,100 Z"/></g>
+        <g fill="none" stroke="#ece0cc" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+          <path d="M80,106 C66,106 62,90 73,84 C67,73 80,66 89,73 C94,64 106,64 111,73 C120,66 133,73 127,84 C138,90 134,106 120,106 Z"/>
+          <path d="M82,106 L118,106 L116,118 L84,118 Z"/>
+          <line x1="92" y1="106" x2="92" y2="117"/><line x1="100" y1="106" x2="100" y2="117"/><line x1="108" y1="106" x2="108" y2="117"/>
+        </g>
+        <text x="100" y="134" font-family="'Cinzel', serif" font-size="9" letter-spacing="3" fill="#c9a961" text-anchor="middle">VIMBUCH</text>
+      </g>
+    </defs></svg>
 
-      <div class="m-item"><span class="m-name">Bruschetta al Pomodoro</span><span class="m-dots"></span><span class="m-price">6,90 €</span></div>
-      <p class="m-desc">Geröstetes Brot mit frischen Tomaten, Knoblauch &amp; Basilikum</p>
+    <!-- SALAT -->
+    <div class="menu-card reveal" id="salat">
+      <h3 class="menu-cat">Salat</h3>
+      <div class="menu-cat-script">Insalate</div>
 
-      <div class="m-item"><span class="m-name">Insalata Caprese</span><span class="m-dots"></span><span class="m-price">8,50 €</span></div>
-      <p class="m-desc">Mozzarella, Tomaten &amp; Basilikum mit Olivenöl</p>
+      <div class="m-item"><span class="m-name">10 Kleiner Salat</span><span class="m-dots"></span><span class="m-price">6,00 €</span></div>
+      <p class="m-desc">Rohkostsalat, Tomaten, Gurken, Salat</p>
 
-      <div class="m-item"><span class="m-name">Antipasti Misti</span><span class="m-dots"></span><span class="m-price">9,90 €</span></div>
-      <p class="m-desc">Gemischte italienische Vorspeisenplatte</p>
+      <div class="m-item"><span class="m-name">11 Großer Salat</span><span class="m-dots"></span><span class="m-price">8,50 €</span></div>
+      <p class="m-desc">Rohkostsalat, Tomaten, Gurken, Salat</p>
 
-      <div class="m-item"><span class="m-name">Vitello Tonnato</span><span class="m-dots"></span><span class="m-price">10,90 €</span></div>
-      <p class="m-desc">Kalbfleisch in feiner Thunfisch-Kapern-Sauce</p>
+      <div class="m-item"><span class="m-name">12 Salat mit Hähnchenbrust</span><span class="m-dots"></span><span class="m-price">14,50 €</span></div>
+      <p class="m-desc">Rohkostsalat, Tomaten, Gurken, Salat, gebratene Hähnchenbrust</p>
+
+      <div class="m-item"><span class="m-name">13 Butterfly-Crunch Garnelen</span><span class="m-dots"></span><span class="m-price">15,00 €</span></div>
+      <p class="m-desc">Rohkostsalat, Tomaten, Gurken, panierten Garnelen</p>
+      <svg class="chef-sticker menu-seal" viewBox="0 0 200 200" role="img" aria-label="Hier kocht der Chef – Benvenuti in Ristobello"><use href="#chefSealG"/></svg>
+    </div>
+
+    <div class="food-strip reveal">
+      <div class="fs-img" style="background-image:url('img/food-1.jpg');"></div>
+      <div class="fs-img" style="background-image:url('img/food-4.jpg');"></div>
+      <div class="fs-img" style="background-image:url('img/food-2.jpg');"></div>
     </div>
 
     <!-- PIZZA -->
     <div class="menu-card reveal" id="pizza">
       <h3 class="menu-cat">Pizza</h3>
-      <div class="menu-cat-script">dal forno</div>
+      <div class="menu-cat-script">Ø 32 cm</div>
 
-      <div class="m-item"><span class="m-name">Margherita</span><span class="m-dots"></span><span class="m-price">8,50 €</span></div>
-      <p class="m-desc">Tomaten, Mozzarella &amp; Basilikum</p>
+      <div class="m-item"><span class="m-name">19 Brot</span><span class="m-dots"></span><span class="m-price">7,00 €</span></div>
+      <p class="m-desc">Olivenöl, Oregano, Knoblauch</p>
 
-      <div class="m-item"><span class="m-name">Prosciutto e Funghi</span><span class="m-dots"></span><span class="m-price">10,90 €</span></div>
-      <p class="m-desc">Schinken, Champignons &amp; Mozzarella</p>
+      <div class="m-item"><span class="m-name">20 Margherita</span><span class="m-dots"></span><span class="m-price">9,50 €</span></div>
+      <p class="m-desc">Tomatensoße, Mozzarella</p>
 
-      <div class="m-item"><span class="m-name">Diavola</span><span class="m-dots"></span><span class="m-price">11,50 €</span></div>
-      <p class="m-desc">Scharfe Salami &amp; Peperoni</p>
+      <div class="m-item"><span class="m-name">21 Salami <span class="m-code">1234</span></span><span class="m-dots"></span><span class="m-price">11,00 €</span></div>
+      <p class="m-desc">Tomatensoße, Mozzarella, Salami</p>
 
-      <div class="m-item"><span class="m-name">Quattro Stagioni</span><span class="m-dots"></span><span class="m-price">12,50 €</span></div>
-      <p class="m-desc">Schinken, Champignons, Artischocken &amp; Oliven</p>
+      <div class="m-item"><span class="m-name">22 Proschiutto <span class="m-code">12345</span></span><span class="m-dots"></span><span class="m-price">11,00 €</span></div>
+      <p class="m-desc">Tomatensoße, Mozzarella, Schinken</p>
 
-      <div class="m-item"><span class="m-name">Tonno e Cipolla</span><span class="m-dots"></span><span class="m-price">11,90 €</span></div>
-      <p class="m-desc">Thunfisch &amp; Zwiebeln</p>
+      <div class="m-item"><span class="m-name">23 Proschiutto e Funghi <span class="m-code">12345</span></span><span class="m-dots"></span><span class="m-price">11,50 €</span></div>
+      <p class="m-desc">Tomatensoße, Mozzarella, Schinken, Champignons</p>
 
-      <div class="m-item"><span class="m-name">Ristobello Speciale</span><span class="m-dots"></span><span class="m-price">13,90 €</span></div>
-      <p class="m-desc">Unsere Hauspizza mit reichlich Belag des Hauses</p>
+      <div class="m-item"><span class="m-name">24 Capricciosa <span class="m-code">123456</span></span><span class="m-dots"></span><span class="m-price">12,50 €</span></div>
+      <p class="m-desc">Tomatensoße, Mozzarella, Schinken, Artischocken, Oliven</p>
+
+      <div class="m-item"><span class="m-name">25 Ortolana <span class="m-code">1</span></span><span class="m-dots"></span><span class="m-price">13,50 €</span></div>
+      <p class="m-desc">Tomatensoße, Mozzarella, Knoblauch, gegrilltes Gemüse, Schafskäse</p>
+
+      <div class="m-item"><span class="m-name">26 Salame Piccante <span class="m-code">1</span></span><span class="m-dots"></span><span class="m-price">12,00 €</span></div>
+      <p class="m-desc">Tomatensoße, Mozzarella, scharfe Salami</p>
+
+      <div class="m-item"><span class="m-name">27 Tonno e Cipolle <span class="m-code">1</span></span><span class="m-dots"></span><span class="m-price">13,00 €</span></div>
+      <p class="m-desc">Tomatensoße, Mozzarella, Thunfisch, Zwiebel</p>
+
+      <div class="m-item"><span class="m-name">28 Lachs <span class="m-code">1</span></span><span class="m-dots"></span><span class="m-price">15,00 €</span></div>
+      <p class="m-desc">Tomatensoße, Mozzarella, Knoblauch, Lachs, Zwiebel</p>
+
+      <div class="m-item"><span class="m-name">29 Melli <span class="m-code">1</span></span><span class="m-dots"></span><span class="m-price">14,00 €</span></div>
+      <p class="m-desc">Tomatensoße, Mozzarella, Gorgonzola, Parmaschinken</p>
+
+      <div class="m-item"><span class="m-name">30 Italia <span class="m-code">1</span></span><span class="m-dots"></span><span class="m-price">12,50 €</span></div>
+      <p class="m-desc">Tomatensoße, Mozzarella, Rucola, Parmesan</p>
+
+      <div class="m-item"><span class="m-name">31 Calabrese <span class="m-code">126</span></span><span class="m-dots"></span><span class="m-price">13,50 €</span></div>
+      <p class="m-desc">Tomatensoße, Mozzarella, scharfe Salami, Gorgonzola, Oliven, Peperoni scharf</p>
+
+      <div class="m-item"><span class="m-name">32 Zwei Salami <span class="m-code">12</span></span><span class="m-dots"></span><span class="m-price">12,50 €</span></div>
+      <p class="m-desc">Tomatensoße, Mozzarella, Salami, scharfe Salami</p>
+
+      <div class="m-item"><span class="m-name">33 Parma <span class="m-code">12</span></span><span class="m-dots"></span><span class="m-price">14,50 €</span></div>
+      <p class="m-desc">Tomatensoße, Mozzarella, Parmaschinken, Rucola, Parmesan</p>
+
+      <div class="m-item"><span class="m-name">34 Napoli <span class="m-code">AD</span></span><span class="m-dots"></span><span class="m-price">13,00 €</span></div>
+      <p class="m-desc">Tomatensoße, Mozzarella, Sardellen, Oliven, Kapern</p>
+
+      <div class="m-item"><span class="m-name">35 Speziale <span class="m-code">12345A</span></span><span class="m-dots"></span><span class="m-price">13,00 €</span></div>
+      <p class="m-desc">Tomatensoße, Mozzarella, Salami, Schinken, Champignons</p>
+
+      <div class="m-item"><span class="m-name">36 Vegetaria <span class="m-code">2A</span></span><span class="m-dots"></span><span class="m-price">13,00 €</span></div>
+      <p class="m-desc">Tomatensoße, Mozzarella, Artischocken, Paprika, Champignons</p>
+
+      <div class="m-item"><span class="m-name">37 Rustica <span class="m-code">345g</span></span><span class="m-dots"></span><span class="m-price">13,50 €</span></div>
+      <p class="m-desc">Tomatensoße, Mozzarella, Salami, Thunfisch, Knoblauch, Artischocken</p>
+
+      <div class="m-item"><span class="m-name">38 Schwarzwald</span><span class="m-dots"></span><span class="m-price">13,00 €</span></div>
+      <p class="m-desc">Tomatensoße, Mozzarella, Speck, Zwiebel, Paprika</p>
+
+      <div class="m-item"><span class="m-name">39 Diavolo <span class="m-code">124</span></span><span class="m-dots"></span><span class="m-price">13,00 €</span></div>
+      <p class="m-desc">Tomatensoße, Mozzarella, Salami, Paprika, Pepperoni, Kapern, Oliven</p>
+
+      <div class="m-item"><span class="m-name">40 Burrata <span class="m-code">G</span></span><span class="m-dots"></span><span class="m-price">14,50 €</span></div>
+      <p class="m-desc">Tomatensoße, Mozzarella, Basilikumpesto, Kirschtomaten, Burratakäse</p>
+      <svg class="chef-sticker menu-seal" viewBox="0 0 200 200" role="img" aria-label="Hier kocht der Chef – Benvenuti in Ristobello"><use href="#chefSealG"/></svg>
     </div>
 
-    <!-- PASTA -->
+    <div class="food-strip reveal">
+      <div class="fs-img" style="background-image:url('img/food-3.jpg');"></div>
+      <div class="fs-img" style="background-image:url('img/food-6.jpg');"></div>
+      <div class="fs-img" style="background-image:url('img/food-5.jpg');"></div>
+    </div>
+
+    <!-- AUS DEM BACKOFEN -->
+    <div class="menu-card reveal" id="backofen">
+      <h3 class="menu-cat">Aus dem Backofen</h3>
+      <div class="menu-cat-script">al forno</div>
+
+      <div class="m-item"><span class="m-name">100 Lasagne <span class="m-code">1G2345</span></span><span class="m-dots"></span><span class="m-price">12,50 €</span></div>
+      <p class="m-desc">Hackfleischsoße, Schinken, Mozzarella &amp; Béchamel überbacken</p>
+
+      <div class="m-item"><span class="m-name">101 Don Camillo <span class="m-code">G</span></span><span class="m-dots"></span><span class="m-price">12,00 €</span></div>
+      <p class="m-desc">Penne, Tomatensoße &amp; Gorgonzola überbacken</p>
+
+      <div class="m-item"><span class="m-name">102 Penne al Forno <span class="m-code">G12345</span></span><span class="m-dots"></span><span class="m-price">13,50 €</span></div>
+      <p class="m-desc">Hackfleischsoße, Schinken, Sahne, Parmesan, Mozzarella überbacken</p>
+      <svg class="chef-sticker menu-seal" viewBox="0 0 200 200" role="img" aria-label="Hier kocht der Chef – Benvenuti in Ristobello"><use href="#chefSealG"/></svg>
+    </div>
+
+    <div class="food-strip reveal">
+      <div class="fs-img" style="background-image:url('img/food-2.jpg');"></div>
+      <div class="fs-img" style="background-image:url('img/food-5.jpg');"></div>
+      <div class="fs-img" style="background-image:url('img/food-1.jpg');"></div>
+    </div>
+
+    <!-- PASTA CLASSICA -->
     <div class="menu-card reveal" id="pasta">
-      <h3 class="menu-cat">Pasta</h3>
-      <div class="menu-cat-script">al dente</div>
+      <h3 class="menu-cat">Pasta Classica</h3>
+      <div class="menu-cat-script">classici</div>
 
-      <div class="m-item"><span class="m-name">Spaghetti Aglio e Olio</span><span class="m-dots"></span><span class="m-price">8,90 €</span></div>
-      <p class="m-desc">Knoblauch, Olivenöl &amp; Peperoncino</p>
+      <div class="m-item"><span class="m-name">50 Spaghetti Bolognese <span class="m-code">A</span></span><span class="m-dots"></span><span class="m-price">11,50 €</span></div>
+      <p class="m-desc">Hackfleischsoße aus Rind und Parmesankäse</p>
 
-      <div class="m-item"><span class="m-name">Penne all'Arrabbiata</span><span class="m-dots"></span><span class="m-price">9,90 €</span></div>
-      <p class="m-desc">Pikante Tomatensauce mit Knoblauch</p>
+      <div class="m-item"><span class="m-name">51 Spaghetti Napoli <span class="m-code">A</span></span><span class="m-dots"></span><span class="m-price">10,50 €</span></div>
+      <p class="m-desc">Tomatensoße und Parmesankäse</p>
 
-      <div class="m-item"><span class="m-name">Spaghetti Bolognese</span><span class="m-dots"></span><span class="m-price">10,50 €</span></div>
-      <p class="m-desc">Klassisches Hackfleisch-Ragù</p>
+      <div class="m-item"><span class="m-name">52 Penne Arrabiata <span class="m-code">2A</span></span><span class="m-dots"></span><span class="m-price">11,50 €</span></div>
+      <p class="m-desc">Tomatensoße, scharfe Peperoni, Parmesankäse</p>
 
-      <div class="m-item"><span class="m-name">Tagliatelle al Salmone</span><span class="m-dots"></span><span class="m-price">13,50 €</span></div>
-      <p class="m-desc">Lachs in cremiger Sahnesauce</p>
+      <div class="m-item"><span class="m-name">53 Penne 4 Formaggi <span class="m-code">GA</span></span><span class="m-dots"></span><span class="m-price">13,00 €</span></div>
+      <p class="m-desc">4 verschiedene Käsesorten</p>
 
-      <div class="m-item"><span class="m-name">Lasagne al Forno</span><span class="m-dots"></span><span class="m-price">11,50 €</span></div>
-      <p class="m-desc">Überbacken nach Art des Hauses</p>
+      <div class="m-item"><span class="m-name">54 Spaghetti Carbonara <span class="m-code">GCA</span></span><span class="m-dots"></span><span class="m-price">13,50 €</span></div>
+      <p class="m-desc">Speck und Eier in Sahnesoße &amp; Parmesankäse</p>
+      <svg class="chef-sticker menu-seal" viewBox="0 0 200 200" role="img" aria-label="Hier kocht der Chef – Benvenuti in Ristobello"><use href="#chefSealG"/></svg>
     </div>
 
-    <!-- FLEISCH & FISCH -->
-    <div class="menu-card reveal" id="secondi">
-      <h3 class="menu-cat">Secondi</h3>
-      <div class="menu-cat-script">Fleisch &amp; Fisch</div>
-
-      <div class="m-item"><span class="m-name">Saltimbocca alla Romana</span><span class="m-dots"></span><span class="m-price">16,90 €</span></div>
-      <p class="m-desc">Kalbsschnitzel mit Salbei &amp; Parmaschinken</p>
-
-      <div class="m-item"><span class="m-name">Scaloppine al Limone</span><span class="m-dots"></span><span class="m-price">15,90 €</span></div>
-      <p class="m-desc">Kalbsmedaillons in Zitronensauce</p>
-
-      <div class="m-item"><span class="m-name">Filetto di Branzino</span><span class="m-dots"></span><span class="m-price">18,50 €</span></div>
-      <p class="m-desc">Wolfsbarschfilet mit mediterranem Gemüse</p>
+    <div class="food-strip reveal">
+      <div class="fs-img" style="background-image:url('img/food-4.jpg');"></div>
+      <div class="fs-img" style="background-image:url('img/food-6.jpg');"></div>
+      <div class="fs-img" style="background-image:url('img/food-3.jpg');"></div>
     </div>
 
-    <!-- DOLCI -->
-    <div class="menu-card reveal" id="dolci">
-      <h3 class="menu-cat">Dolci</h3>
-      <div class="menu-cat-script">Dolce Vita</div>
+    <!-- RISTOBELLO SPEZIAL -->
+    <div class="menu-card reveal" id="spezial">
+      <h3 class="menu-cat">Ristobello Spezial</h3>
+      <div class="menu-cat-script">le nostre creazioni</div>
 
-      <div class="m-item"><span class="m-name">Tiramisù</span><span class="m-dots"></span><span class="m-price">5,90 €</span></div>
-      <p class="m-desc">Das klassische Original, frisch zubereitet</p>
+      <div class="m-item"><span class="m-name">70 Penne Salmone &amp; Spinaci <span class="m-code">GA</span></span><span class="m-dots"></span><span class="m-price">15,00 €</span></div>
+      <p class="m-desc">Räucherlachs, Spinat, Knoblauch, Tomatensahnesoße</p>
 
-      <div class="m-item"><span class="m-name">Panna Cotta</span><span class="m-dots"></span><span class="m-price">5,50 €</span></div>
-      <p class="m-desc">Mit fruchtigem Beerenspiegel</p>
+      <div class="m-item"><span class="m-name">72 Penne Gorgonzola &amp; Spinaci <span class="m-code">GA</span></span><span class="m-dots"></span><span class="m-price">13,50 €</span></div>
+      <p class="m-desc">Gorgonzolakäse, Spinat und Sahnesoße</p>
 
-      <div class="m-item"><span class="m-name">Gelato Misto</span><span class="m-dots"></span><span class="m-price">5,50 €</span></div>
-      <p class="m-desc">Eisvariation nach Auswahl</p>
+      <div class="m-item"><span class="m-name">73 Spaghetti Muscheln <span class="m-code">BA</span></span><span class="m-dots"></span><span class="m-price">14,50 €</span></div>
+      <p class="m-desc">Muscheln, Knoblauch, Kapern, Tomatensoße, Kräuterpesto</p>
+
+      <div class="m-item"><span class="m-name">74 Penne Amatriciana <span class="m-code">A</span></span><span class="m-dots"></span><span class="m-price">12,50 €</span></div>
+      <p class="m-desc">Speck, Zwiebel, Tomatensoße und Parmesankäse</p>
+
+      <div class="m-item"><span class="m-name">75 Spaghetti 3 Funghi <span class="m-code">A</span></span><span class="m-dots"></span><span class="m-price">15,00 €</span></div>
+      <p class="m-desc">Verschiedene Pilze, Knoblauch, Tomatensahnesoße, Kräuterpesto, Parmesankäse</p>
+
+      <div class="m-item"><span class="m-name">76 Penne alla Burrata <span class="m-code">GA</span></span><span class="m-dots"></span><span class="m-price">14,50 €</span></div>
+      <p class="m-desc">Tomatensoße, Burrata, Kräuterpesto, Parmesankäse</p>
+
+      <div class="m-item"><span class="m-name">77 Spaghetti Frutti di Mare <span class="m-code">BA</span></span><span class="m-dots"></span><span class="m-price">16,50 €</span></div>
+      <p class="m-desc">Meeresfrüchte, Knoblauch, Tomatensoße</p>
+      <svg class="chef-sticker menu-seal" viewBox="0 0 200 200" role="img" aria-label="Hier kocht der Chef – Benvenuti in Ristobello"><use href="#chefSealG"/></svg>
     </div>
 
     <div class="menu-cta reveal">
@@ -167,7 +276,7 @@
     </div>
 
     <p style="text-align:center;color:rgba(248,239,230,0.55);font-style:italic;margin-top:24px;font-size:15px;">
-      Gerichte &amp; Preise sind beispielhaft — die aktuelle Karte erhalten Sie gerne telefonisch.
+      Die Ziffern und Buchstaben kennzeichnen Zusatzstoffe und Allergene — eine vollständige Übersicht erhalten Sie gerne bei uns.
     </p>
 
   </div>
@@ -227,7 +336,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
-<script src="js/main.js?v=22"></script>
-<script src="js/scroll.js?v=22"></script>
+<script src="js/main.js?v=27"></script>
+<script src="js/scroll.js?v=27"></script>
 </body>
 </html>

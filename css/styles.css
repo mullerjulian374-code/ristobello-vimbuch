@@ -216,7 +216,9 @@ a { color: inherit; text-decoration: none; }
 
 /* ---------- Speisekarte ---------- */
 .menu-wrap { max-width: 920px; margin: 0 auto; }
-.menu-card { background: var(--c-paper); color: var(--c-ink); border: 1px solid rgba(201,169,97,0.35); box-shadow: var(--shadow-card); padding: 48px clamp(28px, 5vw, 60px); margin-bottom: 32px; }
+.menu-card { position: relative; background: var(--c-paper); color: var(--c-ink); border: 1px solid rgba(201,169,97,0.35); box-shadow: var(--shadow-card); padding: 48px clamp(28px, 5vw, 60px) 62px; margin-bottom: 32px; }
+.chef-sticker.menu-seal { width: clamp(76px, 10vw, 100px); right: 16px; bottom: -20px; transform: rotate(-8deg); z-index: 5; }
+.chef-seal-defs { position: absolute; width: 0; height: 0; overflow: hidden; }
 .menu-cat { font-family: var(--font-display); font-size: 30px; text-transform: uppercase; letter-spacing: 3px; color: var(--c-ink); text-align: center; margin: 0 0 4px; font-weight: 600; }
 .menu-cat-script { font-family: var(--font-script); font-size: 30px; color: var(--c-gold); text-align: center; margin-bottom: 28px; }
 .menu-cta { text-align: center; padding: 36px 28px; margin-bottom: 32px; border: 1px solid rgba(201,169,97,0.5); background: linear-gradient(160deg, rgba(58,30,24,0.92), rgba(42,21,16,0.92)); }
@@ -227,6 +229,7 @@ a { color: inherit; text-decoration: none; }
 .m-item .m-dots { flex: 1; border-bottom: 1px dotted rgba(30,20,17,0.35); transform: translateY(-4px); }
 .m-item .m-price { font-family: var(--font-display); font-size: 20px; color: var(--c-wine); font-weight: 600; white-space: nowrap; }
 .m-desc { color: var(--c-ink-soft); font-size: 16px; font-style: italic; margin: 0 0 20px; max-width: 80%; }
+.m-item .m-name .m-code { font-family: var(--font-ui); font-size: 11px; font-weight: 400; letter-spacing: 1px; color: rgba(30,20,17,0.42); vertical-align: super; margin-left: 3px; }
 
 /* ---------- Gallery ---------- */
 .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; max-width: var(--max); margin: 0 auto; }
@@ -281,6 +284,18 @@ a { color: inherit; text-decoration: none; }
   pointer-events: none;
 }
 @media (max-width: 600px) { .chef-sticker { width: 82px; } }
+
+/* Speisekarte: echte Gerichte als sichtbare Foto-Streifen zwischen den Kategorien */
+.food-strip { width: 100%; margin: 6px 0 32px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.food-strip .fs-img {
+  aspect-ratio: 4 / 3; background-size: cover; background-position: center;
+  border: 1px solid rgba(201,169,97,0.4); box-shadow: var(--shadow-card);
+  border-radius: 4px; transition: transform 0.5s cubic-bezier(0.2,0.7,0.15,1);
+}
+.food-strip .fs-img:hover { transform: scale(1.03); }
+@media (max-width: 767px) {
+  .food-strip { grid-template-columns: 1fr 1fr; gap: 10px; }
+}
 .footer-bottom { max-width: var(--max); margin: 20px auto 0; display: flex; justify-content: space-between; font-family: var(--font-ui); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: rgba(248,239,230,0.55); }
 
 /* ---------- Floating call button ---------- */
